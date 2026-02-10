@@ -29,6 +29,8 @@ app.include_router(conversations_router)
 app.include_router(chat_router)
 app.include_router(memory_router)
 app.include_router(upload_router)
+os.makedirs("storage/generated", exist_ok=True)
+os.makedirs("storage/tmp", exist_ok=True)
 
 app.mount("/storage", StaticFiles(directory="storage"), name="storage")
 app.mount("/mockups", StaticFiles(directory="mockups"), name="mockups")
